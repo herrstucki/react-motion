@@ -365,10 +365,6 @@ const TransitionMotion = React.createClass({
       const timeDelta = currentTime - this.prevTime;
       this.prevTime = currentTime;
       this.accumulatedTime = this.accumulatedTime + timeDelta;
-      // more than 10 frames? prolly switched browser tab. Restart
-      if (this.accumulatedTime > msPerFrame * 10) {
-        this.accumulatedTime = 0;
-      }
 
       if (this.accumulatedTime === 0) {
         // no need to cancel animationID here; shouldn't have any in flight
